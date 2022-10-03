@@ -2,15 +2,6 @@
 #include<string>
 #include<iostream>
 
-// class stack{
-//     private:
-//         node * head;
-//     public:
-//         stack();
-//         void push(node *);
-//         void pop();
-//         node * top();
-// }
 
 stack::stack(){
     head = nullptr;
