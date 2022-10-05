@@ -5,7 +5,7 @@
 #include"stack.hpp"
 
 int main(){
-    const std::string filename("Error3.html");
+    const std::string filename("Valido.html");
     std::ifstream f_in(filename);
     std::stringstream nombre_out;
     // f_in.open(filename);
@@ -73,9 +73,8 @@ int main(){
     }
     else std::cout<< "Error al leer " << filename << std::endl;
     if(!(s->isEmpty()) && error == false){
-        f_out<<"¡Hubo un error! Los siguientes tag no están cerrados: "<<std::endl;
         while(!(s->isEmpty())){
-            f_out<<(s->top())->getData()<<std::endl;
+            f_out<<"Error en línea "<<linea<<" : <"<<(s->top())->getData()<<"> no tiene un closing tag"<<std::endl;
             s->pop();
         }
         error = true;
