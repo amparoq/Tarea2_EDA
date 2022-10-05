@@ -8,7 +8,6 @@ int main(){
     const std::string filename("Valido.html");
     std::ifstream f_in(filename);
     std::stringstream nombre_out;
-    // f_in.open(filename);
     int largo = filename.size();
     nombre_out << filename.substr(0,largo-4) <<"log";
     std::ofstream f_out(nombre_out.str());
@@ -43,7 +42,7 @@ int main(){
                 }
                 if(closing == true){
                     if(s->top()==nullptr){
-                        f_out<<"Error en linea "<<linea<<" : Se esperaba </"<<(s->top())->getData()<<"> en lugar de </"<<p<<">"<<std::endl;
+                        f_out<<"Error en linea "<<linea<<" : </"<<p<<"> no tiene un opening tag"<<std::endl;
                         error = true;
                         break;
                     }
